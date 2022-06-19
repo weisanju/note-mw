@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>docker网络管理</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">我的笔记库</a></li><li class="chapter-item expanded affix "><li class="part-title">容器</li><li class="chapter-item expanded "><a href="../1.容器_docker/index.html"><strong aria-hidden="true">1.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../1.容器_docker/DockerFile简介.html"><strong aria-hidden="true">1.1.</strong> DockerFile简介</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/dockcer-swarm.html"><strong aria-hidden="true">1.2.</strong> dockcer-swarm</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/docker-compose.html"><strong aria-hidden="true">1.3.</strong> docker-compose</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/docker-swarm集群搭建实例.html"><strong aria-hidden="true">1.4.</strong> docker-swarm集群搭建实例</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/docker-volume管理.html"><strong aria-hidden="true">1.5.</strong> docker-volume管理</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/docker容器连接.html"><strong aria-hidden="true">1.6.</strong> docker容器连接</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/docker搭建registry仓库.html"><strong aria-hidden="true">1.7.</strong> docker搭建registry仓库</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/docker搭建私有镜像库.html"><strong aria-hidden="true">1.8.</strong> docker搭建私有镜像库</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/docker离线安装.html"><strong aria-hidden="true">1.9.</strong> docker离线安装</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/docker网络管理.html" class="active"><strong aria-hidden="true">1.10.</strong> docker网络管理</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/docker远程连接配置.html"><strong aria-hidden="true">1.11.</strong> docker远程连接配置</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/redis主从与哨兵.html"><strong aria-hidden="true">1.12.</strong> redis主从与哨兵</a></li><li class="chapter-item expanded "><a href="../1.容器_docker/使用实例.html"><strong aria-hidden="true">1.13.</strong> 使用实例</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> k8s</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2.容器_k8s/k8s/index.html"><strong aria-hidden="true">2.1.</strong> k8s</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">运维与部署</li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> ansible</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/index.html"><strong aria-hidden="true">3.1.</strong> ansible</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/1.入门.html"><strong aria-hidden="true">3.1.1.</strong> 入门</a></li><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/Ansible.html"><strong aria-hidden="true">3.1.2.</strong> Ansible</a></li><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/Loops.html"><strong aria-hidden="true">3.1.3.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/ansible中的变量.html"><strong aria-hidden="true">3.1.4.</strong> ansible中的变量</a></li><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/ansible示例.html"><strong aria-hidden="true">3.1.5.</strong> ansible示例</a></li><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/inventor文件.html"><strong aria-hidden="true">3.1.6.</strong> inventor文件</a></li><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/playbooks.html"><strong aria-hidden="true">3.1.7.</strong> playbooks</a></li><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/临时命令行模式.html"><strong aria-hidden="true">3.1.8.</strong> 临时命令行模式</a></li><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/2.AnsibleConcepts/index.html"><strong aria-hidden="true">3.1.9.</strong> 2.AnsibleConcepts</a></li><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/3.内置模块/index.html"><strong aria-hidden="true">3.1.10.</strong> 3.内置模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/3.内置模块/1.Command.html"><strong aria-hidden="true">3.1.10.1.</strong> Command</a></li><li class="chapter-item expanded "><a href="../3.运维与部署_ansible/ansible/3.内置模块/2.Shell.html"><strong aria-hidden="true">3.1.10.2.</strong> Shell</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">持续集成</li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> jenkins</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../4.持续集成_jenkins/Jenkins.html"><strong aria-hidden="true">4.1.</strong> Jenkins</a></li><li class="chapter-item expanded "><a href="../4.持续集成_jenkins/jenkins_pipeline.html"><strong aria-hidden="true">4.2.</strong> jenkins_pipeline</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> 日志收集</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../5.日志收集/filebeat/index.html"><strong aria-hidden="true">5.1.</strong> filebeat</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../5.日志收集/filebeat/1.HowFilebeatWorks.html"><strong aria-hidden="true">5.1.1.</strong> HowFilebeatWorks</a></li><li class="chapter-item expanded "><a href="../5.日志收集/filebeat/ConfigureFilebeat/index.html"><strong aria-hidden="true">5.1.2.</strong> ConfigureFilebeat</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../5.日志收集/filebeat/ConfigureFilebeat/1.Input.html"><strong aria-hidden="true">5.1.2.1.</strong> Input</a></li><li class="chapter-item expanded "><a href="../5.日志收集/filebeat/ConfigureFilebeat/2.InputFileStream.html"><strong aria-hidden="true">5.1.2.2.</strong> InputFileStream</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">消息队列</li><li class="chapter-item expanded "><a href="../6.消息队列_RocketMQ/index.html"><strong aria-hidden="true">6.</strong> RocketMQ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../6.消息队列_RocketMQ/MQ消息的投递机制.html"><strong aria-hidden="true">6.1.</strong> MQ消息的投递机制</a></li><li class="chapter-item expanded "><a href="../6.消息队列_RocketMQ/MQ的一致性算法实现原理.html"><strong aria-hidden="true">6.2.</strong> MQ的一致性算法实现原理</a></li><li class="chapter-item expanded "><a href="../6.消息队列_RocketMQ/架构和设计.html"><strong aria-hidden="true">6.3.</strong> 架构和设计</a></li><li class="chapter-item expanded "><a href="../6.消息队列_RocketMQ/案例.html"><strong aria-hidden="true">6.4.</strong> 案例</a></li><li class="chapter-item expanded "><a href="../6.消息队列_RocketMQ/概念和特性.html"><strong aria-hidden="true">6.5.</strong> 概念和特性</a></li></ol></li><li class="chapter-item expanded "><a href="../7.消息队列_KafaKa/index.html"><strong aria-hidden="true">7.</strong> KafaKa</a></li><li class="chapter-item expanded affix "><li class="part-title">缓存中间件</li><li class="chapter-item expanded "><a href="../8.缓存中间件_Redis/index.html"><strong aria-hidden="true">8.</strong> Redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../8.缓存中间件_Redis/Redis应用-位图.html"><strong aria-hidden="true">8.1.</strong> Redis应用-位图</a></li><li class="chapter-item expanded "><a href="../8.缓存中间件_Redis/Redis应用-分布式锁.html"><strong aria-hidden="true">8.2.</strong> Redis应用-分布式锁</a></li><li class="chapter-item expanded "><a href="../8.缓存中间件_Redis/redis-keys与scan.html"><strong aria-hidden="true">8.3.</strong> redis-keys与scan</a></li><li class="chapter-item expanded "><a href="../8.缓存中间件_Redis/redis-serverAndRedis-cli.html"><strong aria-hidden="true">8.4.</strong> redis-serverAndRedis-cli</a></li><li class="chapter-item expanded "><a href="../8.缓存中间件_Redis/redis主从与哨兵.html"><strong aria-hidden="true">8.5.</strong> redis主从与哨兵</a></li><li class="chapter-item expanded "><a href="../8.缓存中间件_Redis/redis发布与订阅.html"><strong aria-hidden="true">8.6.</strong> redis发布与订阅</a></li><li class="chapter-item expanded "><a href="../8.缓存中间件_Redis/redis集群.html"><strong aria-hidden="true">8.7.</strong> redis集群</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.8.</strong> redis数据结构</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../8.缓存中间件_Redis/redis数据结构/Redis有序集合(sortedSet).html"><strong aria-hidden="true">8.8.1.</strong> Redis有序集合(sortedSet)</a></li><li class="chapter-item expanded "><a href="../8.缓存中间件_Redis/redis数据结构/基本数据结构.html"><strong aria-hidden="true">8.8.2.</strong> 基本数据结构</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">源码管理</li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/index.html"><strong aria-hidden="true">9.</strong> GIT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../9.源码管理_GIT/Git库管理.html"><strong aria-hidden="true">9.1.</strong> Git库管理</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/gitDiff原理.html"><strong aria-hidden="true">9.2.</strong> gitDiff原理</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/gitLog命令.html"><strong aria-hidden="true">9.3.</strong> gitLog命令</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/gitflow.html"><strong aria-hidden="true">9.4.</strong> gitflow</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/gitmerge.html"><strong aria-hidden="true">9.5.</strong> gitmerge</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/gitrebase.html"><strong aria-hidden="true">9.6.</strong> gitrebase</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/git使用案例.html"><strong aria-hidden="true">9.7.</strong> git使用案例</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/git分支.html"><strong aria-hidden="true">9.8.</strong> git分支</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/git命令杂项.html"><strong aria-hidden="true">9.9.</strong> git命令杂项</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/git基础.html"><strong aria-hidden="true">9.10.</strong> git基础</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/git错误提交后场景.html"><strong aria-hidden="true">9.11.</strong> git错误提交后场景</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/tag管理.html"><strong aria-hidden="true">9.12.</strong> tag管理</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/使用远程分支强制覆盖本地工作区暂存区版本库.html"><strong aria-hidden="true">9.13.</strong> 使用远程分支强制覆盖本地工作区暂存区版本库</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/克隆.html"><strong aria-hidden="true">9.14.</strong> 克隆</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/历史提交.html"><strong aria-hidden="true">9.15.</strong> 历史提交</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/回退合并提交.html"><strong aria-hidden="true">9.16.</strong> 回退合并提交</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/基本操作.html"><strong aria-hidden="true">9.17.</strong> 基本操作</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/杂项.html"><strong aria-hidden="true">9.18.</strong> 杂项</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.19.</strong> GIT协作</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../9.源码管理_GIT/GIT协作/Git支持的协议.html"><strong aria-hidden="true">9.19.1.</strong> Git支持的协议</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/GIT协作/冲突解决.html"><strong aria-hidden="true">9.19.2.</strong> 冲突解决</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/GIT协作/补丁文件交互.html"><strong aria-hidden="true">9.19.3.</strong> 补丁文件交互</a></li><li class="chapter-item expanded "><a href="../9.源码管理_GIT/GIT协作/远程版本库.html"><strong aria-hidden="true">9.19.4.</strong> 远程版本库</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="前言"><a class="header" href="#前言">前言</a></h1>
+<p>Docker 存在 4种网络工作方式，和一些自定义网络模式</p>
+<p>安装Docker时，它会自动创建三个网络，bridge（创建容器默认连接到此网络）、 none 、host</p>
+<p><strong>host</strong></p>
+<p>容器将不会虚拟出自己的网卡，配置自己的IP等，而是使用宿主机的IP和端口。</p>
+<p><strong>Container</strong></p>
+<p>创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围。</p>
+<p><strong>None</strong></p>
+<p>该模式关闭了容器的网络功能。</p>
+<p><strong>Bridge</strong></p>
+<p>此模式会为每一个容器分配、设置IP等，并将容器连接到一个docker0虚拟网桥，通过docker0网桥以及Iptables nat表配置与宿主机通信。</p>
+<p>Docker内置这三个网络，运行容器时，你可以使用该--network标志来指定容器应连接到哪些网络。</p>
+<p><strong>指定网络</strong></p>
+<pre><code class="language-sh">host模式：使用 --net=host 指定。
+
+none模式：使用 --net=none 指定。
+
+bridge模式：使用 --net=bridge 指定，默认设置。
+
+container模式：使用 --net=container:NAME_or_ID 指定。
+</code></pre>
+<h1 id="网络模式详解"><a class="header" href="#网络模式详解">网络模式详解</a></h1>
+<h2 id="host"><a class="header" href="#host">Host</a></h2>
+<p><strong>与宿主机在同一个网络中，但没有独立IP地址</strong></p>
+<p><strong>命名空间隔离资源</strong></p>
+<p>众所周知，Docker使用了Linux的Namespaces技术来进行资源隔离，</p>
+<p>如PID Namespace隔离进程，Mount Namespace隔离文件系统，Network Namespace隔离网络等。</p>
+<p><strong>network 隔离网络</strong></p>
+<p>一个Network Namespace提供了一份独立的网络环境，包括网卡、路由、Iptable规则等都与其他的Network Namespace隔离。</p>
+<p>一个Docker容器一般会分配一个独立的Network Namespace。</p>
+<p>但如果启动容器的时候使用host模式，那么这个容器将不会获得一个独立的Network Namespace，而是和宿主机共用一个Network Namespace。容器将不会虚拟出自己的网卡，配置自己的IP等，而是使用宿主机的IP和端口。</p>
+<p><strong>例如</strong></p>
+<pre><code class="language-sh">docker run --name nginx1 -p80:80 --net=host -d nginx
+</code></pre>
+<h2 id="container"><a class="header" href="#container">Container</a></h2>
+<p>这个模式指定新创建的容器和已经存在的一个容器共享一个Network Namespace</p>
+<p>而不是和宿主机共享。新创建的容器不会创建自己的网卡，配置自己的IP，而是和一个指定的容器共享IP、端口范围等</p>
+<p>同样，两个容器除了网络方面，其他的如文件系统、进程列表等还是隔离的。两个容器的进程可以通过lo网卡设备通信。</p>
+<h2 id="none"><a class="header" href="#none">None</a></h2>
+<p>该模式关闭了容器的网络功能</p>
+<h2 id="bridge"><a class="header" href="#bridge">Bridge</a></h2>
+<p>容器使用独立network Namespace，并连接到docker0虚拟网卡</p>
+<p>通过docker0网桥以及Iptables nat表配置与宿主机通信；bridge模式是Docker默认的网络设置，此模式会为每一个容器分配Network Namespace、设置IP等，并将一个主机上的Docker容器连接到一个虚拟网桥上。下面着重介绍一下此模式。</p>
+<h3 id="bridge模式的拓扑结构"><a class="header" href="#bridge模式的拓扑结构">Bridge模式的拓扑结构</a></h3>
+<p><strong>创建虚拟网桥</strong></p>
+<p>当Docker server启动时，会在主机上创建一个名为docker0的虚拟网桥，此主机上启动的Docker容器会连接到这个虚拟网桥上</p>
+<p><strong>分配容器IP</strong></p>
+<p>虚拟网桥的工作方式和物理交换机类似，这样主机上的所有容器就通过交换机连在了一个二层网络中</p>
+<p>接下来就要为容器分配IP了，Docker会从RFC1918所定义的私有IP网段中，选择一个和宿主机不同的IP地址和子网分配给docker0，连接到docker0的容器就从这个子网中选择一个未占用的IP使用，如一般Docker会使用172.17.0.0/16这个网段，并将172.17.0.1/16分配给docker0网桥</p>
+<p><img src="/images/docker-network-bridge-example1.jpg" alt="" /></p>
+<h3 id="网络配置过程"><a class="header" href="#网络配置过程">网络配置过程</a></h3>
+<ul>
+<li>在主机上创建一对虚拟网卡veth pair设备</li>
+</ul>
+<p>veth设备总是成对出现的，它们组成了一个数据的通道，数据从一个设备进入，就会从另一个设备出来。因此，veth设备常用来连接两个网络设备</p>
+<ul>
+<li>
+<p>Docker将veth pair设备的一端放在新创建的容器中，并命名为eth0。另一端放在主机中，以veth65f9这样类似的名字命名，并将这个网络设备加入到docker0网桥中</p>
+</li>
+<li>
+<p>从docker0子网中分配一个IP给容器使用，并设置docker0的IP地址为容器的默认网关。</p>
+</li>
+</ul>
+<h3 id="bridge模式下容器的通信"><a class="header" href="#bridge模式下容器的通信">bridge模式下容器的通信</a></h3>
+<p><strong>容器间可以相互通信</strong></p>
+<p>在bridge模式下，连在同一网桥上的容器可以相互通信</p>
+<p>（若出于安全考虑，也可以禁止它们之间通信，方法是在DOCKER_OPTS变量中设置–icc=false，这样只有使用–link才能使两个容器通信）</p>
+<p><strong>限制容器间的通信</strong></p>
+<p>Docker可以开启容器间通信（意味着默认配置--icc=true），也就是说，宿主机上的所有容器可以不受任何限制地相互通信，这可能导致拒绝服务攻击。</p>
+<p>Docker可以通过--ip_forward和--iptables两个选项控制容器间、容器和外部世界的通信。</p>
+<pre><code>-A POSTROUTING -s 172.17.0.0/16 ! -o docker0 -j MASQUERADE
+</code></pre>
+<pre><code>这条规则会将源地址为172.17.0.0/16的包（也就是从Docker容器产生的包），并且不是从docker0网卡发出的，进行源地址转换，转换成主机网卡的地址。
+
+这么说可能不太好理解，举一个例子说明一下。假设主机有一块网卡为eth0，IP地址为10.10.101.105/24，网关为10.10.101.254。从主机上一个IP为172.17.0.1/16的容器中ping百度（180.76.3.151）。IP包首先从容器发往自己的默认网关docker0，包到达docker0后，也就到达了主机上。然后会查询主机的路由表，发现包应该从主机的eth0发往主机的网关10.10.105.254/24。接着包会转发给eth0，并从eth0发出去（主机的ip_forward转发应该已经打开）。这时候，上面的Iptable规则就会起作用，对包做SNAT转换，将源地址换为eth0的地址。这样，在外界看来，这个包就是从10.10.101.105上发出来的，Docker容器对外是不可见的。
+</code></pre>
+<h3 id="外面的机器是如何访问docker容器的服务呢"><a class="header" href="#外面的机器是如何访问docker容器的服务呢">外面的机器是如何访问Docker容器的服务呢？</a></h3>
+<pre><code class="language-sh"> docker run --name=nginx_bridge --net=bridge -p 80:80 -d nginx
+</code></pre>
+<pre><code class="language-sh">iptables -L
+-A DOCKER ! -i docker0 -p tcp -m tcp --dport 80 -j DNAT --to-destination 172.17.0.2:80
+</code></pre>
+<pre><code>此条规则就是对主机eth0收到的目的端口为80的tcp流量进行DNAT转换，将流量发往172.17.0.2:80，也就是我们上面创建的Docker容器。所以，外界只需访问10.10.101.105:80就可以访问到容器中的服务。
+
+除此之外，我们还可以自定义Docker使用的IP地址、DNS等信息，甚至使用自己定义的网桥，但是其工作方式还是一样的。
+</code></pre>
+<h2 id="自定义网络"><a class="header" href="#自定义网络">自定义网络</a></h2>
+<p>建议使用自定义的网桥来控制哪些容器可以相互通信，还可以自动DNS解析容器名称到IP地址。Docker提供了创建这些网络的默认网络驱动程序，你可以创建一个新的Bridge网络，Overlay或Macvlan网络。你还可以创建一个网络插件或远程网络进行完整的自定义和控制。</p>
+<p>你可以根据需要创建任意数量的网络，并且可以在任何给定时间将容器连接到这些网络中的零个或多个网络。此外，您可以连接并断开网络中的运行容器，而无需重新启动容器。当容器连接到多个网络时，其外部连接通过第一个非内部网络以词法顺序提供。</p>
+<h3 id="自定义桥接网络"><a class="header" href="#自定义桥接网络">自定义桥接网络</a></h3>
+<pre><code class="language-sh">docker network create --driver bridge new_bridge
+
+创建网络后，可以看到新增加了一个网桥（172.18.0.1）。
+
+72: br-2edfc1326986: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 02:42:07:cc:f8:33 brd ff:ff:ff:ff:ff:ff
+    inet 172.18.0.1/16 scope global br-2edfc1326986
+       valid_lft forever preferred_lft forever
+</code></pre>
+<h3 id="macvlan"><a class="header" href="#macvlan">Macvlan</a></h3>
+<p><strong>简介</strong></p>
+<p>Macvlan是一个新的尝试，是真正的网络虚拟化技术的转折点。Linux实现非常轻量级，因为与传统的Linux Bridge隔离相比，它们只是简单地与一个Linux以太网接口或子接口相关联，以实现网络之间的分离和与物理网络的连接。</p>
+<p>Macvlan提供了许多独特的功能，并有充足的空间进一步创新与各种模式。这些方法的两个高级优点是绕过Linux网桥的正面性能以及移动部件少的简单性。删除传统上驻留在Docker主机NIC和容器接口之间的网桥留下了一个非常简单的设置，包括容器接口，直接连接到Docker主机接口。由于在这些情况下没有端口映射，因此可以轻松访问外部服务。</p>
+<p><strong>Macvlan Bridge模式示例用法</strong></p>
+<p>略</p>
+<p><a href="https://www.cnblogs.com/zuxing/articles/8780661.html">详见</a></p>
+<h1 id="docker网络管理命令"><a class="header" href="#docker网络管理命令">docker网络管理命令</a></h1>
+<pre><code class="language-sh">#创建自定义网络
+docker network create
+# 上线一个网络
+docker network connect
+# 查看网络
+docker network ls
+# 删除网络
+docker network rm
+# 下线网络
+docker network disconnect
+# 查看网络明细
+docker network inspect
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../1.容器_docker/docker离线安装.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../1.容器_docker/docker远程连接配置.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../1.容器_docker/docker离线安装.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../1.容器_docker/docker远程连接配置.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ansible</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">我的笔记库</a></li><li class="chapter-item expanded affix "><li class="part-title">容器</li><li class="chapter-item expanded "><a href="../../1.容器_docker/index.html"><strong aria-hidden="true">1.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../1.容器_docker/DockerFile简介.html"><strong aria-hidden="true">1.1.</strong> DockerFile简介</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/dockcer-swarm.html"><strong aria-hidden="true">1.2.</strong> dockcer-swarm</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker-compose.html"><strong aria-hidden="true">1.3.</strong> docker-compose</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker-swarm集群搭建实例.html"><strong aria-hidden="true">1.4.</strong> docker-swarm集群搭建实例</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker-volume管理.html"><strong aria-hidden="true">1.5.</strong> docker-volume管理</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker容器连接.html"><strong aria-hidden="true">1.6.</strong> docker容器连接</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker搭建registry仓库.html"><strong aria-hidden="true">1.7.</strong> docker搭建registry仓库</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker搭建私有镜像库.html"><strong aria-hidden="true">1.8.</strong> docker搭建私有镜像库</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker离线安装.html"><strong aria-hidden="true">1.9.</strong> docker离线安装</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker网络管理.html"><strong aria-hidden="true">1.10.</strong> docker网络管理</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker远程连接配置.html"><strong aria-hidden="true">1.11.</strong> docker远程连接配置</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/redis主从与哨兵.html"><strong aria-hidden="true">1.12.</strong> redis主从与哨兵</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/使用实例.html"><strong aria-hidden="true">1.13.</strong> 使用实例</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> k8s</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2.容器_k8s/k8s/index.html"><strong aria-hidden="true">2.1.</strong> k8s</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">运维与部署</li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> ansible</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/index.html" class="active"><strong aria-hidden="true">3.1.</strong> ansible</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/1.入门.html"><strong aria-hidden="true">3.1.1.</strong> 入门</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/Ansible.html"><strong aria-hidden="true">3.1.2.</strong> Ansible</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/Loops.html"><strong aria-hidden="true">3.1.3.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/ansible中的变量.html"><strong aria-hidden="true">3.1.4.</strong> ansible中的变量</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/ansible示例.html"><strong aria-hidden="true">3.1.5.</strong> ansible示例</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/inventor文件.html"><strong aria-hidden="true">3.1.6.</strong> inventor文件</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/playbooks.html"><strong aria-hidden="true">3.1.7.</strong> playbooks</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/临时命令行模式.html"><strong aria-hidden="true">3.1.8.</strong> 临时命令行模式</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/2.AnsibleConcepts/index.html"><strong aria-hidden="true">3.1.9.</strong> 2.AnsibleConcepts</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/3.内置模块/index.html"><strong aria-hidden="true">3.1.10.</strong> 3.内置模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/3.内置模块/1.Command.html"><strong aria-hidden="true">3.1.10.1.</strong> Command</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/3.内置模块/2.Shell.html"><strong aria-hidden="true">3.1.10.2.</strong> Shell</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">持续集成</li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> jenkins</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../4.持续集成_jenkins/Jenkins.html"><strong aria-hidden="true">4.1.</strong> Jenkins</a></li><li class="chapter-item expanded "><a href="../../4.持续集成_jenkins/jenkins_pipeline.html"><strong aria-hidden="true">4.2.</strong> jenkins_pipeline</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> 日志收集</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../5.日志收集/filebeat/index.html"><strong aria-hidden="true">5.1.</strong> filebeat</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../5.日志收集/filebeat/1.HowFilebeatWorks.html"><strong aria-hidden="true">5.1.1.</strong> HowFilebeatWorks</a></li><li class="chapter-item expanded "><a href="../../5.日志收集/filebeat/ConfigureFilebeat/index.html"><strong aria-hidden="true">5.1.2.</strong> ConfigureFilebeat</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../5.日志收集/filebeat/ConfigureFilebeat/1.Input.html"><strong aria-hidden="true">5.1.2.1.</strong> Input</a></li><li class="chapter-item expanded "><a href="../../5.日志收集/filebeat/ConfigureFilebeat/2.InputFileStream.html"><strong aria-hidden="true">5.1.2.2.</strong> InputFileStream</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">消息队列</li><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/index.html"><strong aria-hidden="true">6.</strong> RocketMQ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/MQ消息的投递机制.html"><strong aria-hidden="true">6.1.</strong> MQ消息的投递机制</a></li><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/MQ的一致性算法实现原理.html"><strong aria-hidden="true">6.2.</strong> MQ的一致性算法实现原理</a></li><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/架构和设计.html"><strong aria-hidden="true">6.3.</strong> 架构和设计</a></li><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/案例.html"><strong aria-hidden="true">6.4.</strong> 案例</a></li><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/概念和特性.html"><strong aria-hidden="true">6.5.</strong> 概念和特性</a></li></ol></li><li class="chapter-item expanded "><a href="../../7.消息队列_KafaKa/index.html"><strong aria-hidden="true">7.</strong> KafaKa</a></li><li class="chapter-item expanded affix "><li class="part-title">缓存中间件</li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/index.html"><strong aria-hidden="true">8.</strong> Redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/Redis应用-位图.html"><strong aria-hidden="true">8.1.</strong> Redis应用-位图</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/Redis应用-分布式锁.html"><strong aria-hidden="true">8.2.</strong> Redis应用-分布式锁</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis-keys与scan.html"><strong aria-hidden="true">8.3.</strong> redis-keys与scan</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis-serverAndRedis-cli.html"><strong aria-hidden="true">8.4.</strong> redis-serverAndRedis-cli</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis主从与哨兵.html"><strong aria-hidden="true">8.5.</strong> redis主从与哨兵</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis发布与订阅.html"><strong aria-hidden="true">8.6.</strong> redis发布与订阅</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis集群.html"><strong aria-hidden="true">8.7.</strong> redis集群</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.8.</strong> redis数据结构</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis数据结构/Redis有序集合(sortedSet).html"><strong aria-hidden="true">8.8.1.</strong> Redis有序集合(sortedSet)</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis数据结构/基本数据结构.html"><strong aria-hidden="true">8.8.2.</strong> 基本数据结构</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">源码管理</li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/index.html"><strong aria-hidden="true">9.</strong> GIT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/Git库管理.html"><strong aria-hidden="true">9.1.</strong> Git库管理</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/gitDiff原理.html"><strong aria-hidden="true">9.2.</strong> gitDiff原理</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/gitLog命令.html"><strong aria-hidden="true">9.3.</strong> gitLog命令</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/gitflow.html"><strong aria-hidden="true">9.4.</strong> gitflow</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/gitmerge.html"><strong aria-hidden="true">9.5.</strong> gitmerge</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/gitrebase.html"><strong aria-hidden="true">9.6.</strong> gitrebase</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/git使用案例.html"><strong aria-hidden="true">9.7.</strong> git使用案例</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/git分支.html"><strong aria-hidden="true">9.8.</strong> git分支</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/git命令杂项.html"><strong aria-hidden="true">9.9.</strong> git命令杂项</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/git基础.html"><strong aria-hidden="true">9.10.</strong> git基础</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/git错误提交后场景.html"><strong aria-hidden="true">9.11.</strong> git错误提交后场景</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/tag管理.html"><strong aria-hidden="true">9.12.</strong> tag管理</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/使用远程分支强制覆盖本地工作区暂存区版本库.html"><strong aria-hidden="true">9.13.</strong> 使用远程分支强制覆盖本地工作区暂存区版本库</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/克隆.html"><strong aria-hidden="true">9.14.</strong> 克隆</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/历史提交.html"><strong aria-hidden="true">9.15.</strong> 历史提交</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/回退合并提交.html"><strong aria-hidden="true">9.16.</strong> 回退合并提交</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/基本操作.html"><strong aria-hidden="true">9.17.</strong> 基本操作</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/杂项.html"><strong aria-hidden="true">9.18.</strong> 杂项</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.19.</strong> GIT协作</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/GIT协作/Git支持的协议.html"><strong aria-hidden="true">9.19.1.</strong> Git支持的协议</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/GIT协作/冲突解决.html"><strong aria-hidden="true">9.19.2.</strong> 冲突解决</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/GIT协作/补丁文件交互.html"><strong aria-hidden="true">9.19.3.</strong> 补丁文件交互</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/GIT协作/远程版本库.html"><strong aria-hidden="true">9.19.4.</strong> 远程版本库</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="installation"><a class="header" href="#installation"><a href="http://ansible.com.cn/docs/intro_installation.html#id9">Installation</a></a></h1>
+<h3 id="从github获取ansible"><a class="header" href="#从github获取ansible"><a href="http://ansible.com.cn/docs/intro_installation.html#id10">从Github获取Ansible</a></a></h3>
+<p>如果你有一个github账户,可以跟进Ansible在Github的项目: <a href="https://github.com/ansible/ansible">Github project</a> 我们在这里保持对bugs和feature ideas的跟踪.</p>
+<h3 id="需要安装些什么"><a class="header" href="#需要安装些什么"><a href="http://ansible.com.cn/docs/intro_installation.html#id11">需要安装些什么</a></a></h3>
+<ol>
+<li>
+<p>Ansible默认通过 SSH 协议管理机器.</p>
+</li>
+<li>
+<p>安装Ansible之后,不需要启动或运行一个后台进程,或是添加一个数据库.只要在一台电脑(可以是一台笔记本)上安装好,就可以通过这台电脑管理一组远程的机器.在远程被管理的机器上,不需要安装运行任何软件,</p>
+</li>
+<li>
+<p>因此升级Ansible版本不会有太多问题.</p>
+</li>
+</ol>
+<h3 id="选择哪一个版本"><a class="header" href="#选择哪一个版本"><a href="http://ansible.com.cn/docs/intro_installation.html#id12">选择哪一个版本?</a></a></h3>
+<ol>
+<li>
+<p>因为Ansible可以很简单的从源码运行,且不必在远程被管理机器上安装任何软件,很多Ansible用户会跟进使用开发版本.</p>
+</li>
+<li>
+<p>Ansible一般每两个月出一个发行版本.小bugs一般在下一个发行版本中修复,并在稳定分支中做backports.</p>
+</li>
+<li>
+<p>大bugs会在必要时出一个维护版本,不过这不是很频繁.</p>
+</li>
+<li>
+<p>若你希望使用Ansible的最新版本,并且你使用的操作系统是 Red Hat Enterprise Linux (TM), CentOS, Fedora, Debian, Ubuntu,我们建议使用系统的软件包管理器.</p>
+</li>
+<li>
+<p>另有一种选择是通过”pip”工具安装,”pip”是一个安装和管理Python包的工具.</p>
+</li>
+<li>
+<p>若你希望跟进开发版本,想使用和测试最新的功能特性,我们会分享如何从源码运行Ansible的方法.从源码运行程序不需要进行软件安装.</p>
+</li>
+</ol>
+<h3 id="对管理主机的要求"><a class="header" href="#对管理主机的要求"><a href="http://ansible.com.cn/docs/intro_installation.html#id13">对管理主机的要求</a></a></h3>
+<ol>
+<li>目前,只要机器上安装了 Python 2.6 或 Python 2.7 (windows系统不可以做控制主机),都可以运行Ansible.</li>
+<li>主机的系统可以是 Red Hat, Debian, CentOS, OS X, BSD的各种版本,等等.</li>
+<li>自2.0版本开始,ansible使用了更多句柄来管理它的子进程,对于OS X系统,你需要增加ulimit值才能使用15个以上子进程,方法 sudo launchctl limit maxfiles 1024 2048,否则你可能会看见”Too many open file”的错误提示.</li>
+</ol>
+<h3 id="对托管节点的要求"><a class="header" href="#对托管节点的要求"><a href="http://ansible.com.cn/docs/intro_installation.html#id14">对托管节点的要求</a></a></h3>
+<ol>
+<li>通常我们使用 ssh 与托管节点通信，默认使用 sftp.如果 sftp 不可用，可在 ansible.cfg 配置文件中配置成 scp 的方式</li>
+<li>在托管节点上也需要安装 Python 2.4 或以上的版本.如果版本低于 Python 2.5 ,还需要额外安装一个模块:<code>python-simplejson</code></li>
+<li>没安装python-simplejson,也可以使用Ansible的”raw”模块和script模块,因此从技术上讲,你可以通过Ansible的”raw”模块安装python-simplejson,之后就可以使用Ansible的所有功能了.</li>
+<li>如果托管节点上开启了SElinux,你需要安装libselinux-python,这样才可使用Ansible中与copy/file/template相关的函数.你可以通过Ansible的yum模块在需要的托管节点上安装libselinux-python.</li>
+<li>Python 3 与 Python 2 是稍有不同的语言,大多数Python程序还不能在 Python 3 中正确运行.一些Linux发行版(Gentoo, Arch)没有默认安装 Python 2.X 解释器.在这些系统上,你需要安装一个 Python 2.X 解释器,并在 inventory (详见 <a href="http://ansible.com.cn/docs/intro_inventory.html"><em>Inventory文件</em></a>) 中设置 ‘ansible_python_interpreter’ 变量指向你的 2.X Python.你可以使用 ‘raw’ 模块在托管节点上远程安装Python 2.X.</li>
+<li>例如：ansible myhost --sudo -m raw -a &quot;yum install -y python2 python-simplejson&quot; 这条命令可以通过远程方式在托管节点上安装 Python 2.X 和 simplejson 模块.</li>
+<li>Red Hat Enterprise Linux, CentOS, Fedora, and Ubuntu 等发行版都默认安装了 2.X 的解释器,包括几乎所有的Unix系统也是如此.</li>
+</ol>
+<h3 id="安装管理主机"><a class="header" href="#安装管理主机"><a href="http://ansible.com.cn/docs/intro_installation.html#id15">安装管理主机</a></a></h3>
+<ol>
+<li>
+<p>从项目的checkout中可以很容易运行Ansible,Ansible的运行不要求root权限,也不依赖于其他软件,不要求运行后台进程,也不需要设置数据库.</p>
+</li>
+<li>
+<p>因此我们社区的许多用户一直使用Ansible的开发版本,这样可以利用最新的功能特性,也方便对项目做贡献.因为不需要安装任何东西,跟进Ansible的开发版相对于其他开源项目要容易很多.</p>
+</li>
+</ol>
+<h4 id="从源码安装的步骤"><a class="header" href="#从源码安装的步骤">从源码安装的步骤</a></h4>
+<pre><code>$ git clone git://github.com/ansible/ansible.git --recursive
+$ cd ./ansible
+</code></pre>
+<h4 id="使用-bash"><a class="header" href="#使用-bash">使用 Bash:</a></h4>
+<pre><code>$ source ./hacking/env-setup
+</code></pre>
+<h4 id="使用-fish"><a class="header" href="#使用-fish">使用 Fish:</a></h4>
+<pre><code>$ . ./hacking/env-setup.fish
+</code></pre>
+<p>If you want to suppress spurious warnings/errors, use:</p>
+<pre><code>$ source ./hacking/env-setup -q
+</code></pre>
+<p>如果没有安装pip, 请先安装对应于你的Python版本的pip:</p>
+<pre><code>$ sudo easy_install pip
+</code></pre>
+<p>以下的Python模块也需要安装</p>
+<pre><code>$ sudo pip install paramiko PyYAML Jinja2 httplib2 six
+</code></pre>
+<p>注意,当更新ansible版本时,不只要更新git的源码树,也要更新git中指向Ansible自身模块的 “submodules” (不是同一种模块)</p>
+<pre><code>$ git pull --rebase
+$ git submodule update --init --recursive
+</code></pre>
+<p>一旦运行env-setup脚本,就意味着Ansible从源码中运行起来了.默认的inventory文件是 /etc/ansible/hosts.inventory文件也可以另行指定 (详见 <a href="http://ansible.com.cn/docs/intro_inventory.html"><em>Inventory文件</em></a>) :</p>
+<pre><code>$ echo &quot;127.0.0.1&quot; &gt; ~/ansible_hosts
+$ export ANSIBLE_HOSTS=~/ansible_hosts
+</code></pre>
+<p>你可以在手册的后续章节阅读更多关于 inventory 文件的使用,现在让我们测试一条ping命令:</p>
+<pre><code>$ ansible all -m ping --ask-pass
+</code></pre>
+<pre><code>你也可以使用命令 “sudo make install”
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../2.容器_k8s/k8s/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../3.运维与部署_ansible/ansible/1.入门.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../2.容器_k8s/k8s/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../3.运维与部署_ansible/ansible/1.入门.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

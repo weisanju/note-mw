@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>filebeat</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">我的笔记库</a></li><li class="chapter-item expanded affix "><li class="part-title">容器</li><li class="chapter-item expanded "><a href="../../1.容器_docker/index.html"><strong aria-hidden="true">1.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../1.容器_docker/DockerFile简介.html"><strong aria-hidden="true">1.1.</strong> DockerFile简介</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/dockcer-swarm.html"><strong aria-hidden="true">1.2.</strong> dockcer-swarm</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker-compose.html"><strong aria-hidden="true">1.3.</strong> docker-compose</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker-swarm集群搭建实例.html"><strong aria-hidden="true">1.4.</strong> docker-swarm集群搭建实例</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker-volume管理.html"><strong aria-hidden="true">1.5.</strong> docker-volume管理</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker容器连接.html"><strong aria-hidden="true">1.6.</strong> docker容器连接</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker搭建registry仓库.html"><strong aria-hidden="true">1.7.</strong> docker搭建registry仓库</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker搭建私有镜像库.html"><strong aria-hidden="true">1.8.</strong> docker搭建私有镜像库</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker离线安装.html"><strong aria-hidden="true">1.9.</strong> docker离线安装</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker网络管理.html"><strong aria-hidden="true">1.10.</strong> docker网络管理</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/docker远程连接配置.html"><strong aria-hidden="true">1.11.</strong> docker远程连接配置</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/redis主从与哨兵.html"><strong aria-hidden="true">1.12.</strong> redis主从与哨兵</a></li><li class="chapter-item expanded "><a href="../../1.容器_docker/使用实例.html"><strong aria-hidden="true">1.13.</strong> 使用实例</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> k8s</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2.容器_k8s/k8s/index.html"><strong aria-hidden="true">2.1.</strong> k8s</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">运维与部署</li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> ansible</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/index.html"><strong aria-hidden="true">3.1.</strong> ansible</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/1.入门.html"><strong aria-hidden="true">3.1.1.</strong> 入门</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/Ansible.html"><strong aria-hidden="true">3.1.2.</strong> Ansible</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/Loops.html"><strong aria-hidden="true">3.1.3.</strong> Loops</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/ansible中的变量.html"><strong aria-hidden="true">3.1.4.</strong> ansible中的变量</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/ansible示例.html"><strong aria-hidden="true">3.1.5.</strong> ansible示例</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/inventor文件.html"><strong aria-hidden="true">3.1.6.</strong> inventor文件</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/playbooks.html"><strong aria-hidden="true">3.1.7.</strong> playbooks</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/临时命令行模式.html"><strong aria-hidden="true">3.1.8.</strong> 临时命令行模式</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/2.AnsibleConcepts/index.html"><strong aria-hidden="true">3.1.9.</strong> 2.AnsibleConcepts</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/3.内置模块/index.html"><strong aria-hidden="true">3.1.10.</strong> 3.内置模块</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/3.内置模块/1.Command.html"><strong aria-hidden="true">3.1.10.1.</strong> Command</a></li><li class="chapter-item expanded "><a href="../../3.运维与部署_ansible/ansible/3.内置模块/2.Shell.html"><strong aria-hidden="true">3.1.10.2.</strong> Shell</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">持续集成</li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> jenkins</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../4.持续集成_jenkins/Jenkins.html"><strong aria-hidden="true">4.1.</strong> Jenkins</a></li><li class="chapter-item expanded "><a href="../../4.持续集成_jenkins/jenkins_pipeline.html"><strong aria-hidden="true">4.2.</strong> jenkins_pipeline</a></li></ol></li><li class="chapter-item expanded "><li class="part-title"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> 日志收集</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../5.日志收集/filebeat/index.html" class="active"><strong aria-hidden="true">5.1.</strong> filebeat</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../5.日志收集/filebeat/1.HowFilebeatWorks.html"><strong aria-hidden="true">5.1.1.</strong> HowFilebeatWorks</a></li><li class="chapter-item expanded "><a href="../../5.日志收集/filebeat/ConfigureFilebeat/index.html"><strong aria-hidden="true">5.1.2.</strong> ConfigureFilebeat</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../5.日志收集/filebeat/ConfigureFilebeat/1.Input.html"><strong aria-hidden="true">5.1.2.1.</strong> Input</a></li><li class="chapter-item expanded "><a href="../../5.日志收集/filebeat/ConfigureFilebeat/2.InputFileStream.html"><strong aria-hidden="true">5.1.2.2.</strong> InputFileStream</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">消息队列</li><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/index.html"><strong aria-hidden="true">6.</strong> RocketMQ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/MQ消息的投递机制.html"><strong aria-hidden="true">6.1.</strong> MQ消息的投递机制</a></li><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/MQ的一致性算法实现原理.html"><strong aria-hidden="true">6.2.</strong> MQ的一致性算法实现原理</a></li><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/架构和设计.html"><strong aria-hidden="true">6.3.</strong> 架构和设计</a></li><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/案例.html"><strong aria-hidden="true">6.4.</strong> 案例</a></li><li class="chapter-item expanded "><a href="../../6.消息队列_RocketMQ/概念和特性.html"><strong aria-hidden="true">6.5.</strong> 概念和特性</a></li></ol></li><li class="chapter-item expanded "><a href="../../7.消息队列_KafaKa/index.html"><strong aria-hidden="true">7.</strong> KafaKa</a></li><li class="chapter-item expanded affix "><li class="part-title">缓存中间件</li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/index.html"><strong aria-hidden="true">8.</strong> Redis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/Redis应用-位图.html"><strong aria-hidden="true">8.1.</strong> Redis应用-位图</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/Redis应用-分布式锁.html"><strong aria-hidden="true">8.2.</strong> Redis应用-分布式锁</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis-keys与scan.html"><strong aria-hidden="true">8.3.</strong> redis-keys与scan</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis-serverAndRedis-cli.html"><strong aria-hidden="true">8.4.</strong> redis-serverAndRedis-cli</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis主从与哨兵.html"><strong aria-hidden="true">8.5.</strong> redis主从与哨兵</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis发布与订阅.html"><strong aria-hidden="true">8.6.</strong> redis发布与订阅</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis集群.html"><strong aria-hidden="true">8.7.</strong> redis集群</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.8.</strong> redis数据结构</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis数据结构/Redis有序集合(sortedSet).html"><strong aria-hidden="true">8.8.1.</strong> Redis有序集合(sortedSet)</a></li><li class="chapter-item expanded "><a href="../../8.缓存中间件_Redis/redis数据结构/基本数据结构.html"><strong aria-hidden="true">8.8.2.</strong> 基本数据结构</a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="part-title">源码管理</li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/index.html"><strong aria-hidden="true">9.</strong> GIT</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/Git库管理.html"><strong aria-hidden="true">9.1.</strong> Git库管理</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/gitDiff原理.html"><strong aria-hidden="true">9.2.</strong> gitDiff原理</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/gitLog命令.html"><strong aria-hidden="true">9.3.</strong> gitLog命令</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/gitflow.html"><strong aria-hidden="true">9.4.</strong> gitflow</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/gitmerge.html"><strong aria-hidden="true">9.5.</strong> gitmerge</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/gitrebase.html"><strong aria-hidden="true">9.6.</strong> gitrebase</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/git使用案例.html"><strong aria-hidden="true">9.7.</strong> git使用案例</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/git分支.html"><strong aria-hidden="true">9.8.</strong> git分支</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/git命令杂项.html"><strong aria-hidden="true">9.9.</strong> git命令杂项</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/git基础.html"><strong aria-hidden="true">9.10.</strong> git基础</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/git错误提交后场景.html"><strong aria-hidden="true">9.11.</strong> git错误提交后场景</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/tag管理.html"><strong aria-hidden="true">9.12.</strong> tag管理</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/使用远程分支强制覆盖本地工作区暂存区版本库.html"><strong aria-hidden="true">9.13.</strong> 使用远程分支强制覆盖本地工作区暂存区版本库</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/克隆.html"><strong aria-hidden="true">9.14.</strong> 克隆</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/历史提交.html"><strong aria-hidden="true">9.15.</strong> 历史提交</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/回退合并提交.html"><strong aria-hidden="true">9.16.</strong> 回退合并提交</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/基本操作.html"><strong aria-hidden="true">9.17.</strong> 基本操作</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/杂项.html"><strong aria-hidden="true">9.18.</strong> 杂项</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.19.</strong> GIT协作</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/GIT协作/Git支持的协议.html"><strong aria-hidden="true">9.19.1.</strong> Git支持的协议</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/GIT协作/冲突解决.html"><strong aria-hidden="true">9.19.2.</strong> 冲突解决</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/GIT协作/补丁文件交互.html"><strong aria-hidden="true">9.19.3.</strong> 补丁文件交互</a></li><li class="chapter-item expanded "><a href="../../9.源码管理_GIT/GIT协作/远程版本库.html"><strong aria-hidden="true">9.19.4.</strong> 远程版本库</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="快速安装"><a class="header" href="#快速安装">快速安装</a></h2>
+<h3 id="step-1-install-filebeat"><a class="header" href="#step-1-install-filebeat">Step 1: Install Filebeat</a></h3>
+<pre><code class="language-sh">curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.1.1-darwin-x86_64.tar.gz
+tar xzvf filebeat-8.1.1-darwin-x86_64.tar.gz
+</code></pre>
+<pre><code class="language-sh">curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.1.1-linux-x86_64.tar.gz
+tar xzvf filebeat-8.1.1-linux-x86_64.tar.gz
+</code></pre>
+<h3 id="step-2-connect-to-the-elastic-stack"><a class="header" href="#step-2-connect-to-the-elastic-stack">Step 2: Connect to the Elastic Stack</a></h3>
+<pre><code class="language-yaml">output.elasticsearch:
+  hosts: [&quot;https://myEShost:9200&quot;]
+  username: &quot;filebeat_internal&quot;
+  password: &quot;YOUR_PASSWORD&quot; 
+  ssl:
+    enabled: true
+    ca_trusted_fingerprint: &quot;b9a10bbe64ee9826abeda6546fc988c8bf798b41957c33d05db736716513dc9c&quot; 
+</code></pre>
+<h3 id="step-3-collect-log-data"><a class="header" href="#step-3-collect-log-data">Step 3: Collect log data</a></h3>
+<pre><code class="language-sh">filebeat modules list
+</code></pre>
+<pre><code>filebeat modules enable nginx
+</code></pre>
+<p>在<em>modules.d</em>下的模块配置中，启用所需的数据集并更改模块设置以匹配您的环境。<strong>Datasets are disabled by default.</strong></p>
+<p>例如，日志位置是根据操作系统设置的。如果您的日志不在默认位置，请设置路径变量:</p>
+<pre><code class="language-yaml">- module: nginx
+  access:
+    enabled: true
+    var.paths: [&quot;/var/log/nginx/access.log*&quot;] 
+</code></pre>
+<p>To see the full list of variables for a module, see the documentation under <a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-modules.html">Modules</a>.</p>
+<pre><code>./filebeat test config -e
+</code></pre>
+<p>Make sure your config files are in the path expected by Filebeat (see <a href="https://www.elastic.co/guide/en/beats/filebeat/current/directory-layout.html">Directory layout</a>), or use the <code>-c</code> flag to specify the path to the config file.</p>
+<p>For more information about configuring Filebeat, also see:</p>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/beats/filebeat/current/configuring-howto-filebeat.html">Configure Filebeat</a></li>
+<li><a href="https://www.elastic.co/guide/en/beats/libbeat/8.1/config-file-format.html">Config file format</a></li>
+<li><a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-reference-yml.html"><code>filebeat.reference.yml</code></a>: This reference configuration file shows all non-deprecated options. You’ll find it in the same location as <code>filebeat.yml</code>.</li>
+</ul>
+<h4 id="enable-and-configure-ecs-loggers-for-application-log-collection"><a class="header" href="#enable-and-configure-ecs-loggers-for-application-log-collection">Enable and configure ECS loggers for application log collection</a></h4>
+<p>虽然Filebeat可用于摄取原始的纯文本应用程序日志，但我们建议您在摄取时结构化你的日志。这使您可以提取字段，例如日志级别和异常堆栈跟踪。</p>
+<p>Elastic通过提供各种流行编程语言的应用程序日志格式化程序来简化此过程。这些插件将您的日志格式化为与ECS兼容的JSON，从而无需手动解析日志。</p>
+<p>See <a href="https://www.elastic.co/guide/en/ecs-logging/overview/master/intro.html">ECS loggers</a> to get started.</p>
+<h4 id="configure-filebeat-manually"><a class="header" href="#configure-filebeat-manually">Configure Filebeat manually</a></h4>
+<p>see <a href="https://www.elastic.co/guide/en/beats/filebeat/current/configuration-filebeat-options.html">configure the input</a> manually.</p>
+<h3 id="step-4-set-up-assets"><a class="header" href="#step-4-set-up-assets">Step 4: Set up assets</a></h3>
+<p>Filebeat comes with predefined assets for parsing, indexing, and visualizing your data. To load these assets:</p>
+<p>Filebeat带有预定义的assets，用于解析，索引和可视化数据。要加载这些assets:</p>
+<pre><code class="language-sh">filebeat setup -e
+</code></pre>
+<p>This step loads the recommended <a href="https://www.elastic.co/guide/en/elasticsearch/reference/8.1/index-templates.html">index template</a> for writing to Elasticsearch and deploys the sample dashboards for visualizing the data in Kibana.</p>
+<p>This step does not load the ingest pipelines used to parse log lines. By default, ingest pipelines are set up automatically the first time you run the module and connect to Elasticsearch.</p>
+<p>此步骤不会加载用于解析日志行的摄取管道。默认情况下，第一次运行模块并连接到Elasticsearch时会自动设置ingest管道。</p>
+<p>需要连接到Elasticsearch (或Elasticsearch服务) 才能设置初始环境。如果您使用的是其他输出，例如Logstash，请参阅:</p>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-template.html#load-template-manually">Load the index template manually</a></li>
+<li><a href="https://www.elastic.co/guide/en/beats/filebeat/current/load-kibana-dashboards.html"><em>Load Kibana dashboards</em></a></li>
+<li><a href="https://www.elastic.co/guide/en/beats/filebeat/current/load-ingest-pipelines.html"><em>Load ingest pipelines</em></a></li>
+</ul>
+<h3 id="step-5-start-filebeat"><a class="header" href="#step-5-start-filebeat">Step 5: Start Filebeat</a></h3>
+<pre><code class="language-sh">sudo chown root filebeat.yml 
+sudo chown root modules.d/nginx.yml 
+sudo ./filebeat -e
+</code></pre>
+<h3 id="step-6-view-your-data-in-kibana"><a class="header" href="#step-6-view-your-data-in-kibana">Step 6: View your data in Kibana</a></h3>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../4.持续集成_jenkins/jenkins_pipeline.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../5.日志收集/filebeat/1.HowFilebeatWorks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../4.持续集成_jenkins/jenkins_pipeline.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../5.日志收集/filebeat/1.HowFilebeatWorks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
